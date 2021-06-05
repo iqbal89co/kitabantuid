@@ -139,19 +139,28 @@
 			<ul class="nav navbar-nav float-right" id="main-menu-navigation-right" data-menu="menu-navigation">
 				<li class="nav-item" id="menu-memberarea">
 					<div class="nav-link">
-
-						<a href="<?= base_url() ?>auth">
+						<?php if ($this->session->userdata('email')) { ?>
 							<button class="btn btn-account-ghost btn-header-main">
-								<i class="las la-user-circle"></i><span class="with-icon-md">Masuk</span>
+								<i class="las la-user-circle"></i><span class="with-icon-md"><?= $user['nama_lengkap'] ?></span>
 							</button>
-						</a>
+							<a href="<?= base_url() ?>auth/logout">
+								<button class="btn btn-account btn-header-main">
+									<span>Logout</span>
+								</button>
+							</a>
+						<?php } else { ?>
+							<a href="<?= base_url() ?>auth">
+								<button class="btn btn-account-ghost btn-header-main">
+									<i class="las la-user-circle"></i><span class="with-icon-md">Masuk</span>
+								</button>
+							</a>
 
-						<a href="<?= base_url() ?>auth/register">
-							<button class="btn btn-account btn-header-main">
-								<span>Daftar</span>
-							</button>
-						</a>
-
+							<a href="<?= base_url() ?>auth/registration">
+								<button class="btn btn-account btn-header-main">
+									<span>Daftar</span>
+								</button>
+							</a>
+						<?php } ?>
 				</li>
 			</ul>
 

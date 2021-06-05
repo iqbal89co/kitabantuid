@@ -37,7 +37,6 @@
 <script src="<?= base_url('assets/') ?>assets/js/scripts/lazysizes.min.js"></script>
 <script src="<?= base_url('assets/') ?>app-assets/vendors/js/vendors.min.js"></script>
 <script src="<?= base_url('assets/') ?>app-assets/vendors/js/ui/jquery.sticky.js"></script>
-<script src="<?= base_url('assets/') ?>app-assets/js/core/alert/sweetalert.min.js" defer></script>
 <script src="<?= base_url('assets/') ?>app-assets/js/core/app-menu.min.js"></script>
 <script src="<?= base_url('assets/') ?>app-assets/js/core/app.min.js"></script>
 

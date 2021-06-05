@@ -5,6 +5,7 @@ class Site extends CI_Controller
 {
 	public function index()
 	{
+		$data['user'] = $this->user->getUser($this->session->userdata('email'));
 		$data['title'] = 'Urun Dana Investasi Bisnis UKM | kitabantu.id';
 		$this->view->getDefault($data, 'main/index');
 	}

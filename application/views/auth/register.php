@@ -17,16 +17,17 @@
 									<h1 class="form-account-title">Daftar Sekarang</h1>
 								</div>
 
-								<form id="formSubmitRegister">
+								<form action="<?= base_url('auth/registration'); ?>" method="POST" id="formSubmitRegister">
 									<input type="hidden" name="racpzCXgm4TtLGedQCNcA5COYISS8AsN" value="2e0e0e531a189e54f9d3eb6443d2c3b3">
 									<div class="form-group">
 										<div class="input-group">
 											<div class="input-group-prepend">
 												<span class="input-group-text form-icon"><i class="la la-user"></i></span>
 											</div>
-											<input type="text" class="form-control alpha-space-only required-form" name="name" id="name" placeholder="Nama Lengkap" value="" required="">
+											<input type="text" class="form-control alpha-space-only required-form" name="name" id="name" placeholder="Nama Lengkap" value="">
 										</div>
 										<span id="name_error" class="text-danger"></span>
+										<?= form_error('name', '<small class="text-danger pl-3">', '</small>'); ?>
 									</div>
 									<div class="form-group">
 										<div class="input-group">
@@ -1260,10 +1261,11 @@
 															</div><span class="iti__country-name">Åland Islands</span><span class="iti__dial-code">+358</span>
 														</li>
 													</ul>
-												</div><input type="tel" class="form-control required-form number-only" name="phone" id="phone" placeholder="821xxxxxx" onkeypress="return numberOnly(event)" value="" required="" autocomplete="off" data-intl-tel-input-id="0" style="padding-left: 82px;">
+												</div><input type="tel" class="form-control required-form number-only" name="no_telp" id="phone" placeholder="821xxxxxx" onkeypress="return numberOnly(event)" value="" autocomplete="off" data-intl-tel-input-id="0" style="padding-left: 82px;">
 											</div>
 											<input type="hidden" name="code_dial" id="code_dial" value="62">
 											<span id="phone_error" class="text-danger"></span>
+											<?= form_error('no_telp', '<small class="text-danger pl-3">', '</small>'); ?>
 										</div>
 									</div>
 									<div class="form-group">
@@ -1271,22 +1273,24 @@
 											<div class="input-group-prepend">
 												<span class="input-group-text form-icon"><i class="la la-envelope"></i></span>
 											</div>
-											<input type="email" class="form-control required-form" name="email" id="email" placeholder="Email" value="" required="">
+											<input type="text" class="form-control required-form" name="email" id="email" placeholder="Email" value="">
 										</div>
 										<span id="email_error" class="text-danger"></span>
+										<?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
 									</div>
 									<div class="form-group">
 										<div class="input-group wrapper-password">
 											<div class="input-group-prepend">
 												<span class="input-group-text form-icon"><i class="la la-unlock"></i></span>
 											</div>
-											<input type="password" class="form-control required-form" name="password" id="password" placeholder="Password" style="border-right: none;" value="" required="">
+											<input type="password" class="form-control required-form" name="password1" id="password" placeholder="Password" style="border-right: none;" value="">
 											<div class="input-group-append">
 												<span class="input-group-text form-icon" style="width: 40px;background: white;">
 													<span id="toggleRegisterPassword" class="la la-eye-slash la-eye toggler-ico"></span>
 												</span>
 											</div>
 										</div>
+										<?= form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
 										<span id="password_error" class="text-danger"></span>
 									</div>
 
@@ -1295,31 +1299,21 @@
 											<div class="input-group-prepend">
 												<span class="input-group-text form-icon"><i class="la la-unlock"></i></span>
 											</div>
-											<input type="password" class="form-control required-form" name="confirmpassword" id="confirmpassword" placeholder="Konfirmasi Password" style="border-right: none;" value="" required="">
-											<div class="input-group-append">
+											<input type="password" class="form-control required-form" name="password2" id="confirmpassword" placeholder="Konfirmasi Password" style="border-right: none;" value="">
+											<div class=" input-group-append">
 												<span class="input-group-text form-icon" style="width: 40px;background: white;">
 													<span id="checkResetPasswordConfirmation" class="la toggler-ico"></span>
 												</span>
 											</div>
 										</div>
+										<?= form_error('password2', '<small class="text-danger pl-3">', '</small>'); ?>
 										<span id="confirmpassword_error" class="text-danger"></span>
 									</div>
 
-									<div class="alert border border-light alert-dismissible fade show" role="alert">
-										<ul class="m-0">
-											<li><small class="text-muted">Minimal 8 karakter</small></li>
-											<li><small class="text-muted">Harus mengandung huruf kecil</small></li>
-											<li><small class="text-muted">Harus mengandung huruf besar</small></li>
-											<li><small class="text-muted">Harus mengandung angka</small></li>
-											<li><small class="text-muted">Harus mengandung spesial karakter</small></li>
-										</ul>
-										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-											<span aria-hidden="true">×</span>
-										</button>
-									</div>
+
 
 									<div style="text-align:center">
-										<button class="btn btn-santara-red btn-account submit-form" type="submit" id="btnRegister" style="width:100%" disabled="">
+										<button class="btn btn-santara-red btn-account submit-form" type="submit" id="btnRegister" style="width:100%" ed="">
 											<span id="submit_text">Masuk</span>
 										</button>
 									</div>
